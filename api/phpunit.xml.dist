@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    backupGlobals="false"
+    colors="true"
+    convertDeprecationsToExceptions="false"
+>
+    <php>
+        <!-- Désactiver les warnings de dépréciation -->
+        <ini name="error_reporting" value="-1"/>
+        
+        <!-- Forcer l'environnement test -->
+        <server name="APP_ENV" value="test" force="true"/>
+        
+        <!-- Indique la classe de Kernel -->
+        <server name="KERNEL_CLASS" value="App\Kernel" />
+
+        <!-- Échapper le & en &amp; -->
+        <server name="DATABASE_URL" 
+                value="mysql://root:@127.0.0.1:3306/ep_construction?serverVersion=8.0.32&amp;charset=utf8mb4"/>
+
+        <!-- Dans la REGEX, double backslash ou échapper ponctuellement -->
+        <server name="CORS_ALLOW_ORIGIN" value="^https\?://(localhost|127\\\.0\\\.0\\\.1)(:[0-9]+)?$"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Project Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+</phpunit>

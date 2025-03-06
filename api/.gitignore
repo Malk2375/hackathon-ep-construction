@@ -1,0 +1,46 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+# Ignorer les fichiers d'environnement
+.env
+.env.test
+
+# Ignorer les fichiers de cache et de logs
+/var/
+/logs/
+
+# Ignorer les fichiers générés par Composer
+/vendor/
+
+# Ignorer les fichiers générés par npm
+/node_modules/
+
+# Ignorer les fichiers spécifiques à l'IDE
+.idea/
+.vscode/
+
+# Ignorer les fichiers temporaires
+*.log
+*.tmp
+
